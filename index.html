@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+ <head>
+  <title>Random String</title>
+</head>
+
+<body>
+  <h1>Click This Button</h1>
+  <button id='one'>Button</button>
+  <p id='two'></p>
+</body>
+
+<script>
+  var array = ['string1', 'string2', 'string3'];
+var elString = document.getElementById('two')
+var generator = document.getElementById('one')
+var stringText = ''
+
+//function return a random string
+//assigns it to stringText
+//pushes stringText to D
+function randomString () {
+stringText = array[Math.floor(Math.random()*array.length)]
+elString.textContent = stringText
+  };
+
+
+//attach a listener to the button
+generator.addEventListener('click', randomString, false)
+</script>
