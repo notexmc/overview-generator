@@ -4,69 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Build Number Generator</title>
-    <link rel = "stylesheet" type = text/css href = "style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
 <h1 id = "title">Build Number Generator</h1>
-<h1 id = "count-down"></h1>
+<h5 id = "count-down"></h5>
 <button type ="button" id = "btn" onclick = "random ()">Generate Build Number</button>
-
- <style>
-  * {
-    margin: 0;
-    padding: 0;
-   box-sizing: border-box;
-   background-color : black;
-}
-
-#title {
-    text-align: center;
-    font-size : 70px;
-    font-family: 'Quicksand', sans-serif;
-    margin : 10px 0;
-    color : white; 
-    animation : t 2s ease infinite; 
-}
-
-#count-down {
-   font-size : 64px;
-   text-align: center;
-   margin-top : 30px;
-   font-family : monospace;
-   color : white;
-}
-
-
-#btn {
-    margin-left : 520px;
-    margin-top : 10px;
-    font-size : 30px;
-    background-color: orange;
-    color : white;
-    padding : 40px;
-    border-radius: 30px;
-    font-weight: bold;
-   font-family: 'Quicksand', sans-serif;
-}
-
-@media all and (max-width : 600px) {
-   #btn {
-      margin-left : 140px;
-     margin-top : 20px
-   }
- #count-down {
-     margin-top : 20px;
-     font-size :  200px;
-}
-}
- </style>
-
  <script>
   function random () {
     var num = 9999999999999999;
     document.getElementById("count-down").innerHTML = Math.floor(Math.random() * num);
-}
+  }
  </script>
 </body>
 </html>
