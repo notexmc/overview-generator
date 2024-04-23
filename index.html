@@ -1,29 +1,108 @@
 <!DOCTYPE html>
- <head>
-  <title>Random String</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Number Generator</title>
+    <link rel = "stylesheet" type = text/css href = "style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <h1>Click This Button</h1>
-  <button id='one'>Button</button>
-  <p id='two'></p>
+<h1 id = "title">Build Number Generator</h1>
+<h1 id = "count-down"></h1>
+<button type ="button" id = "btn" onclick = "random ()">Generate Build Number</button>
+
+ <style>
+  * {
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+   background-color : black;
+}
+
+#title {
+    text-align: center;
+    font-size : 70px;
+    font-family: 'Quicksand', sans-serif;
+    margin : 10px 0;
+    color : white; 
+    animation : t 2s ease infinite; 
+}
+
+@keyframes title {
+    0% {
+        color : orangered;
+    } 
+    25% {
+        color: greenyellow;
+    } 
+    50% {
+        color: yellow;
+    } 
+    75% {
+        color: blue;
+    } 
+    100% {
+        color : green;
+    }
+}
+
+#count-down {
+   font-size : 300px;
+   text-align: center;
+   margin-top : 30px;
+   font-family : monospace;
+   color : white;
+   animation : countdown 2s infinite;
+}
+
+@keyframes countdown {
+    0% {
+        color : orangered;
+    } 
+    25% {
+        color: greenyellow;
+    } 
+    50% {
+        color: yellow;
+    } 
+    75% {
+        color: blue;
+    } 
+    100% {
+        color : green;
+    }
+}
+
+#btn {
+    margin-left : 520px;
+    margin-top : 10px;
+    font-size : 30px;
+    background-color: orange;
+    color : white;
+    padding : 40px;
+    border-radius: 30px;
+    font-weight: bold;
+   font-family: 'Quicksand', sans-serif;
+}
+
+@media all and (max-width : 600px) {
+   #btn {
+      margin-left : 140px;
+     margin-top : 20px
+   }
+ #count-down {
+     margin-top : 20px;
+     font-size :  200px;
+}
+}
+ </style>
+
+ <script>
+  function random () {
+    var num = 99999999999999;
+    document.getElementById("count-down").innerHTML = Math.floor(Math.random() * num);
+}
+ </script>
 </body>
-
-<script>
-  var array = ['string1', 'string2', 'string3'];
-var elString = document.getElementById('two')
-var generator = document.getElementById('one')
-var stringText = ''
-
-//function return a random string
-//assigns it to stringText
-//pushes stringText to D
-function randomString () {
-stringText = array[Math.floor(Math.random()*array.length)]
-elString.textContent = stringText
-  };
-
-
-//attach a listener to the button
-generator.addEventListener('click', randomString, false)
-</script>
+</html>
